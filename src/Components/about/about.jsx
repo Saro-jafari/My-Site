@@ -7,24 +7,24 @@ const AboutMe = () => {
 	return (
 		<div className="bg-[##201235] text-white py-12 px-4 sm:px-6 lg:px-12 mt-32 ">
 			<div className="max-w-6xl mx-auto gap-24">
-				{/* Title */}
+
 				<h1 className="text-4xl sm:text-4xl md:text-5xl font-extrabold text-center text-white mb-6">سلام 👋, من سارو ام</h1>
 
-				{/* Description */}
+
 				<p className="text-base sm:text-xl font-sahel lg:text-lg font-bold text-center mb-8 leading-relaxed">
 					به‌عنوان یک توسعه‌دهنده وب، من متعهد و مشتاق ایجاد وب‌سایت‌های استثنایی هستم. با توجه دقیق به جزئیات و مهارت‌های قوی در برقراری
 					ارتباط، تمرکز من بر ارائه کار با کیفیت بالا و همکاری موثر با مشتریان و اعضای تیم است. هدف من ایجاد وب‌سایت‌هایی است که از نظر
 					ظاهری جذاب و کاربرپسند باشند و تجربه‌ای بدون نقص برای کاربران فراهم کنند.
 				</p>
 
-				{/* Links */}
+
 				<div className="flex flex-col sm:flex-row justify-center items-center sm:space-x-6 space-y-4 sm:space-y-0 mb-8">
 					<Link href="/contact" className="text-blue-500 hover:underline font-medium text-base sm:text-lg">
 						📫 Contact Me
 					</Link>
 				</div>
 
-				{/* Social Links */}
+
 				<div className="flex justify-center space-x-4 mb-8">
 					<a href="https://t.me/Sarojafarii" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors">
 						<Image src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="Telegram" width={40} height={40} />
@@ -55,7 +55,6 @@ const AboutMe = () => {
 					</a>
 				</div>
 
-				{/* Skills Section */}
 				<h2 className="text-2xl sm:text-3xl font-bold text-blue-500 text-center mb-6">Languages and Tools</h2>
 				<div className="flex flex-wrap justify-center gap-4">
 					<Image
