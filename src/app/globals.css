@@ -2,20 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+@import url('https://cdn.fontcdn.ir/font/BZiba.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://cdn.fontcdn.ir/font/Sahel.css');
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+	background: rgb(255, 255, 255);
+	background: linear-gradient(90deg, #0f0715 0%, #291745 100%);
+	font-family: 'B Ziba', 'Roboto', sans-serif;
+}
+
+.font-sahel {
+	font-family: 'Sahel', sans-serif;
 }
