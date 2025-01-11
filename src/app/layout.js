@@ -1,6 +1,6 @@
 import './globals.css';
-import Footer from '@/Components/Footer/Footer';
-import NavBar from '@/Components/NavBar/NavBar';
+import Footer from '../Components/Footer/Footer';
+import NavBar from '../Components/NavBar/NavBar';
 
 export const metadata = {
 	title: 'Saro Jafari',
