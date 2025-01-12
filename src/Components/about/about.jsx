@@ -1,58 +1,89 @@
-// components/AboutMe.jsx
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Head from 'next/head';
 
 const AboutMe = () => {
 	return (
-		<div className="bg-[##201235] text-white py-12 px-4 sm:px-6 lg:px-12 mt-32 ">
+		<section className="bg-[##201235] text-white py-12 px-4 sm:px-6 lg:px-12 mt-32">
+			<Head>
+				<title>سارو - توسعه‌دهنده وب</title>
+				<meta
+					name="description"
+					content="سارو، توسعه‌دهنده وب با تجربه در استفاده از React، TypeScript، Tailwind CSS و سایر تکنولوژی‌های مدرن. برای تماس و اطلاعات بیشتر به این صفحه مراجعه کنید."
+				/>
+				<meta
+					name="keywords"
+					content="سارو, توسعه‌دهنده وب, React, TypeScript, Tailwind CSS, JavaScript, MongoDB, SQL Server, Redux, Next.js, HTML5, CSS3, توسعه وب, توسعه اپلیکیشن, وب‌سایت, طراحی وب, فریلنسری"
+				/>
+				<meta name="author" content="سارو" />
+			</Head>
+
 			<div className="max-w-6xl mx-auto gap-24">
-				<h1 className="text-4xl sm:text-4xl md:text-5xl font-extrabold text-center text-white mb-6">سلام 👋, من سارو ام</h1>
+				<header>
+					<h1 className="text-4xl sm:text-4xl md:text-5xl font-extrabold text-center text-white mb-6">سلام 👋, من سارو ام</h1>
+				</header>
 
-				<p className="text-base sm:text-xl font-sahel lg:text-lg font-bold text-center mb-8 leading-relaxed">
-					به‌عنوان یک توسعه‌دهنده وب، من متعهد و مشتاق ایجاد وب‌سایت‌های استثنایی هستم. با توجه دقیق به جزئیات و مهارت‌های قوی در برقراری
-					ارتباط، تمرکز من بر ارائه کار با کیفیت بالا و همکاری موثر با مشتریان و اعضای تیم است. هدف من ایجاد وب‌سایت‌هایی است که از نظر
-					ظاهری جذاب و کاربرپسند باشند و تجربه‌ای بدون نقص برای کاربران فراهم کنند.
-				</p>
+				<article>
+					<p className="text-base sm:text-xl font-sahel lg:text-lg font-bold text-center mb-8 leading-relaxed">
+						به‌عنوان یک توسعه‌دهنده وب، من متعهد و مشتاق ایجاد وب‌سایت‌های استثنایی هستم. با توجه دقیق به جزئیات و مهارت‌های قوی در برقراری
+						ارتباط، تمرکز من بر ارائه کار با کیفیت بالا و همکاری موثر با مشتریان و اعضای تیم است. هدف من ایجاد وب‌سایت‌هایی است که از نظر
+						ظاهری جذاب و کاربرپسند باشند و تجربه‌ای بدون نقص برای کاربران فراهم کنند.
+					</p>
 
-				<div className="flex flex-col sm:flex-row justify-center items-center sm:space-x-6 space-y-4 sm:space-y-0 mb-8">
-					<Link href="/contact" className="text-blue-500 hover:underline font-medium text-base sm:text-lg">
-						📫 Contact Me
-					</Link>
-				</div>
+					<div className="flex flex-col sm:flex-row justify-center items-center sm:space-x-6 space-y-4 sm:space-y-0 mb-8">
+						<Link href="/contact" className="text-blue-500 hover:underline font-medium text-base sm:text-lg" aria-label="تماس با من">
+							📫 Contact Me
+						</Link>
+					</div>
+				</article>
 
-				<div className="flex justify-center space-x-4 mb-8">
-					<a href="https://t.me/Sarojafarii" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors">
-						<Image src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" alt="Telegram" width={40} height={40} />
-					</a>
-					<a
-						href="https://twitter.com/sarojafarii"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="hover:text-blue-500 transition-colors">
-						<Image
-							src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg"
-							alt="Twitter"
-							width={40}
-							height={40}
-						/>
-					</a>
-					<a
-						href="https://linkedin.com/in/saro-jafari-30a787243"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="hover:text-blue-500 transition-colors">
-						<Image
-							src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg"
-							alt="LinkedIn"
-							width={40}
-							height={40}
-						/>
-					</a>
-				</div>
+				<article>
+					<div className="flex justify-center space-x-4 mb-8">
+						<a
+							href="https://t.me/Sarojafarii"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:text-blue-500 transition-colors"
+							aria-label="Telegram">
+							<Image
+								src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg"
+								alt="Telegram"
+								width={40}
+								height={40}
+							/>
+						</a>
+						<a
+							href="https://twitter.com/sarojafarii"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:text-blue-500 transition-colors"
+							aria-label="Twitter">
+							<Image
+								src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg"
+								alt="Twitter"
+								width={40}
+								height={40}
+							/>
+						</a>
+						<a
+							href="https://linkedin.com/in/saro-jafari-30a787243"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:text-blue-500 transition-colors"
+							aria-label="LinkedIn">
+							<Image
+								src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg"
+								alt="LinkedIn"
+								width={40}
+								height={40}
+							/>
+						</a>
+					</div>
+				</article>
 
-				<h2 className="text-2xl sm:text-3xl font-bold text-blue-500 text-center mb-6">Languages and Tools</h2>
-				<div className="flex flex-wrap justify-center gap-4">
+				<section>
+					<h2 className="text-2xl sm:text-3xl font-bold text-blue-500 text-center mb-6">Languages and Tools</h2>
 					<div className="flex flex-wrap justify-center gap-4">
 						<Image
 							src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"
@@ -100,9 +131,9 @@ const AboutMe = () => {
 						<Image src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" alt="SQL Server" width={50} height={50} />
 						<Image src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg" alt="Next.js" width={50} height={50} />
 					</div>
-				</div>
+				</section>
 			</div>
-		</div>
+		</section>
 	);
 };
 

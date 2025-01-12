@@ -5,12 +5,15 @@ import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
 
+import Head from 'next/head';
+
 const Contact = () => {
 	const items = [
 		{ icon: CiLocationOn, label: 'موقعیت من:', description: 'Karaj, Iran', id: '500' },
 		{ icon: TfiEmail, label: 'ایمیل من:', description: 'Sarojafari2004@gmail.com', id: '501' },
 		{ icon: CiMobile3, label: 'تماس من:', description: '09019909546', id: '502' },
 	];
+
 	const form = useRef();
 
 	const sendEmail = async e => {
@@ -28,63 +31,86 @@ const Contact = () => {
 	};
 
 	return (
-		<section className="my-20 mx-auto px-4 md:px-8 lg:px-12 max-w-7xl mt-28 f" id="contact">
-			<hr className="border-t-2 border-gray-300" />
+		<>
+			<Head>
+				<title>تماس با سارو</title>
+				<meta name="description" content="برای تماس با سارو، توسعه‌دهنده وب، از این فرم استفاده کنید." />
+				<meta name="keywords" content="تماس با سارو, توسعه‌دهنده وب, ایمیل, شماره تماس" />
+				<meta property="og:title" content="تماس با سارو" />
+				<meta property="og:description" content="برای تماس با سارو، توسعه‌دهنده وب، از این فرم استفاده کنید." />
+				<meta property="og:image" content="https://Sarodev.ir/your-image.jpg" /> {/* آدرس تصویر خود را اینجا قرار دهید */}
+				<meta property="og:url" content="https://Sarodev.ir/contact" />
+				<meta name="twitter:title" content="تماس با سارو" />
+				<meta name="twitter:description" content="برای تماس با سارو، توسعه‌دهنده وب، از این فرم استفاده کنید." />
+				<meta name="twitter:image" content="https://Sarodev.ir/your-image.jpg" /> {/* آدرس تصویر خود را اینجا قرار دهید */}
+				<meta name="twitter:url" content="https://Sarodev.ir/contact" />
+			</Head>
+			<section className="my-20 mx-auto px-4 md:px-8 lg:px-12 max-w-7xl mt-28 f" id="contact">
+				<hr className="border-t-2 border-gray-300" />
 
-			<section className="flex flex-col lg:flex-row justify-between mt-12 gap-10">
-				<section className="flex flex-col justify-around gap-6 w-full lg:w-1/2">
-					{items.map(item => (
-						<section key={item.id} className="flex items-start gap-6">
-							<item.icon className="text-[50px] bg-[#fff] text-[#8750F7] p-4 rounded-2xl transition-all duration-300 hover:text-white hover:bg-[#8750F7] transform hover:scale-125 shadow-md" />
-							<section>
-								<span className="font-bold text-[22px] text-white  block mb-1">{item.label}</span>
-								<p className="text-white font-sans  text-[18px]">{item.description}</p>
+				<section className="flex flex-col lg:flex-row justify-between mt-12 gap-10">
+					<section className="flex flex-col justify-around gap-6 w-full lg:w-1/2" aria-label="Contact Information">
+						{items.map(item => (
+							<section key={item.id} className="flex items-start gap-6">
+								<item.icon
+									className="text-[50px] bg-[#fff] text-[#8750F7] p-4 rounded-2xl transition-all duration-300 hover:text-white hover:bg-[#8750F7] transform hover:scale-125 shadow-md"
+									aria-label={item.label}
+								/>
+								<section>
+									<span className="font-bold text-[22px] text-white  block mb-1">{item.label}</span>
+									<p className="text-white font-sans  text-[18px]">{item.description}</p>
+								</section>
 							</section>
-						</section>
-					))}
-				</section>
+						))}
+					</section>
 
-				<section className="w-full lg:w-1/2">
-					<form className="grid grid-cols-1 md:grid-cols-2 gap-6 text-[20px] font-bold " ref={form} onSubmit={sendEmail}>
-						<input
-							type="text"
-							name="user_name"
-							placeholder="نام شما"
-							required
-							className="p-3 rounded-lg border border-gray-300 focus:ring focus:ring-[#8750F7] focus:outline-none text-black"
-						/>
-						<input
-							type="email"
-							name="user_email"
-							placeholder="ایمیل شما"
-							required
-							className="p-3 rounded-lg border border-gray-300 focus:ring focus:ring-[#8750F7] focus:outline-none text-black"
-						/>
-						<input
-							type="text"
-							name="subject"
-							id="subject"
-							placeholder="موضوع"
-							required
-							className="col-span-1 md:col-span-2 p-3 rounded-lg border border-gray-300 focus:ring focus:ring-[#8750F7] focus:outline-none text-black"
-						/>
-						<textarea
-							name="message"
-							rows="5"
-							placeholder="پیام شما"
-							required
-							className="col-span-1 md:col-span-2 p-3 rounded-lg border border-gray-300 focus:ring focus:ring-[#8750F7] focus:outline-none text-black"></textarea>
-						<div className="col-span-1 md:col-span-2 text-center">
-							<button
-								type="submit"
-								className="bg-[#8750F7] p-4 text-white rounded-xl hover:bg-[#8750F7] transition-all duration-300 shadow-lg">
-								ارسال پیام
-							</button>
-						</div>
-					</form>
+					<section className="w-full lg:w-1/2">
+						<form className="grid grid-cols-1 md:grid-cols-2 gap-6 text-[20px] font-bold " ref={form} onSubmit={sendEmail}>
+							<input
+								type="text"
+								name="user_name"
+								placeholder="نام شما"
+								required
+								className="p-3 rounded-lg border border-gray-300 focus:ring focus:ring-[#8750F7] focus:outline-none text-black"
+								aria-label="نام شما"
+							/>
+							<input
+								type="email"
+								name="user_email"
+								placeholder="ایمیل شما"
+								required
+								className="p-3 rounded-lg border border-gray-300 focus:ring focus:ring-[#8750F7] focus:outline-none text-black"
+								aria-label="ایمیل شما"
+							/>
+							<input
+								type="text"
+								name="subject"
+								id="subject"
+								placeholder="موضوع"
+								required
+								className="col-span-1 md:col-span-2 p-3 rounded-lg border border-gray-300 focus:ring focus:ring-[#8750F7] focus:outline-none text-black"
+								aria-label="موضوع"
+							/>
+							<textarea
+								name="message"
+								rows="5"
+								placeholder="پیام شما"
+								required
+								className="col-span-1 md:col-span-2 p-3 rounded-lg border border-gray-300 focus:ring focus:ring-[#8750F7] focus:outline-none text-black"
+								aria-label="پیام شما"
+							/>
+							<div className="col-span-1 md:col-span-2 text-center">
+								<button
+									type="submit"
+									className="bg-[#8750F7] p-4 text-white rounded-xl hover:bg-[#8750F7] transition-all duration-300 shadow-lg">
+									ارسال پیام
+								</button>
+							</div>
+						</form>
+					</section>
 				</section>
 			</section>
-		</section>
+		</>
 	);
 };
 
