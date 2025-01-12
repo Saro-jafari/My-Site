@@ -11,12 +11,10 @@ const HomePage = () => {
 	return (
 		<>
 			<main className="relative flex flex-col-reverse md:flex-row md:justify-around md:items-center h-screen md:h-[70vh]">
-
 				<section
 					className="absolute top-0 left-0 w-full h-full bg-cover bg-center bg-no-repeat md:hidden"
 					style={{ backgroundImage: `url(${ImageProfile.src})`, objectFit: 'cover' }}></section>
 
-			
 				<section className="flex flex-col md:justify-end justify-center md:gap-y-2 text-white md:text-black md:p-0 z-10 md:w-1/2 md:static absolute top-[250px] right-4 md:mt-auto">
 					<h1 className="text-[35px] md:text-[47px] md:font-semibold font-extrabold md:leading-[48px] text-[#dddd]">
 						{' '}
@@ -64,7 +62,7 @@ const HomePage = () => {
 				</section>
 			</main>
 			<section className="flex justify-center pt-28">
-				<MySkills />
+				<MySkills />{' '}
 			</section>
 		</>
 	);
