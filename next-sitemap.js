@@ -1,5 +1,5 @@
 module.exports = {
-	siteUrl: 'http://localhost:3000/',
+	siteUrl: 'http://Sarodev.ir',
 	generateRobotsTxt: true,
 	sitemapSize: 7000,
 };
