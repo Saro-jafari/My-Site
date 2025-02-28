@@ -6,45 +6,32 @@ import Head from 'next/head';
 const AboutMe = () => {
 	return (
 		<section className="bg-[##201235] text-white py-12 px-4 sm:px-6 lg:px-12 mt-32">
-			<Head>
-				<title>سارو - توسعه‌دهنده وب</title>
-				<meta
-					name="description"
-					content="سارو، توسعه‌دهنده وب با تجربه در استفاده از React، TypeScript، Tailwind CSS و سایر تکنولوژی‌های مدرن. برای تماس و اطلاعات بیشتر به این صفحه مراجعه کنید."
-				/>
-				<meta
-					name="keywords"
-					content="سارو, توسعه‌دهنده وب, React, TypeScript, Tailwind CSS, JavaScript, MongoDB, SQL Server, Redux, Next.js, HTML5, CSS3, توسعه وب, توسعه اپلیکیشن, وب‌سایت, طراحی وب, فریلنسری"
-				/>
-				<meta name="author" content="سارو" />
-			</Head>
-
-			<div className="max-w-6xl mx-auto gap-24">
+			<div className="max-w-6xl gap-24 mx-auto">
 				<header>
-					<h1 className="text-4xl sm:text-4xl md:text-5xl font-extrabold text-center text-white mb-6">سلام 👋, من سارو ام</h1>
+					<h1 className="mb-6 text-4xl font-extrabold text-center text-white sm:text-4xl md:text-5xl">سلام 👋, من سارو ام</h1>
 				</header>
 
 				<article>
-					<p className="text-base sm:text-xl font-sahel lg:text-lg font-bold text-center mb-8 leading-relaxed">
-						به‌عنوان یک توسعه‌دهنده وب، من متعهد و مشتاق ایجاد وب‌سایت‌های استثنایی هستم. با توجه دقیق به جزئیات و مهارت‌های قوی در برقراری
-						ارتباط، تمرکز من بر ارائه کار با کیفیت بالا و همکاری موثر با مشتریان و اعضای تیم است. هدف من ایجاد وب‌سایت‌هایی است که از نظر
-						ظاهری جذاب و کاربرپسند باشند و تجربه‌ای بدون نقص برای کاربران فراهم کنند.
+					<p className="mb-8 text-base font-bold leading-relaxed text-center sm:text-xl font-sahel lg:text-lg">
+						به‌عنوان یک توسعه‌دهنده وب، متعهد و پرانرژی به طراحی وب‌سایت‌های استثنایی هستم. با دقت به جزئیات و توانایی عالی در برقراری
+						ارتباط، تمرکز من روی ارائه کار با کیفیت بالا و همکاری موثر با مشتریان و اعضای تیم است. هدف من ایجاد وب‌سایت‌هایی است که نه تنها
+						از نظر ظاهری جذاب باشند، بلکه تجربه‌ای بی‌نقص و کاربرپسند برای مخاطبان فراهم کنند.
 					</p>
 
-					<div className="flex flex-col sm:flex-row justify-center items-center sm:space-x-6 space-y-4 sm:space-y-0 mb-8">
-						<Link href="/contact" className="text-blue-500 hover:underline font-medium text-base sm:text-lg" aria-label="تماس با من">
+					<div className="flex flex-col items-center justify-center mb-8 space-y-4 sm:flex-row sm:space-x-6 sm:space-y-0">
+						<Link href="/contact" className="text-base font-medium text-blue-500 hover:underline sm:text-lg" aria-label="تماس با من">
 							📫 Contact Me
 						</Link>
 					</div>
 				</article>
 
 				<article>
-					<div className="flex justify-center space-x-4 mb-8">
+					<div className="flex justify-center mb-8 space-x-4">
 						<a
 							href="https://t.me/Sarojafarii"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="hover:text-blue-500 transition-colors"
+							className="transition-colors hover:text-blue-500"
 							aria-label="Telegram">
 							<Image
 								src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg"
@@ -57,7 +44,7 @@ const AboutMe = () => {
 							href="https://twitter.com/sarojafarii"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="hover:text-blue-500 transition-colors"
+							className="transition-colors hover:text-blue-500"
 							aria-label="Twitter">
 							<Image
 								src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg"
@@ -70,7 +57,7 @@ const AboutMe = () => {
 							href="https://linkedin.com/in/saro-jafari-30a787243"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="hover:text-blue-500 transition-colors"
+							className="transition-colors hover:text-blue-500"
 							aria-label="LinkedIn">
 							<Image
 								src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg"
@@ -83,7 +70,7 @@ const AboutMe = () => {
 				</article>
 
 				<section>
-					<h2 className="text-2xl sm:text-3xl font-bold text-blue-500 text-center mb-6">Languages and Tools</h2>
+					<h2 className="mb-6 text-2xl font-bold text-center text-blue-500 sm:text-3xl">Languages and Tools</h2>
 					<div className="flex flex-wrap justify-center gap-4">
 						<Image
 							src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"

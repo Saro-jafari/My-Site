@@ -27,14 +27,14 @@ const NavBar = () => {
 	return (
 		<header>
 			<nav className={`fixed top-0 left-0 w-full z-50 transition-all ${isScrolled ? 'bg-[#1A1A2E]' : 'bg-transparent'}`}>
-				<div className="max-w-screen-xl mx-auto p-4 flex justify-between items-center relative">
+				<div className="relative flex items-center justify-between max-w-screen-xl p-4 mx-auto">
 					<span className="w-[120px] text-[#EAEAEA] font-bold ml-auto md:mr-0 cursor-pointer">
-						<Image src={LogoSite} alt="Logo of the website" />
+						<Image src={LogoSite} alt="Logo of the website" priority />
 					</span>
 
-					<ul className="hidden md:flex font-bold text-xl flex-row space-x-8 justify-center items-center flex-grow gap-5">
+					<ul className="flex-row items-center justify-center flex-grow hidden gap-5 space-x-8 text-xl font-bold md:flex">
 						<li>
-							<Link href="/" aria-label="Go to home page" className="text-[#DDD] text-[30px] hover:border-b-[4px]  hover:transition-[2s]">
+							<Link href="/" aria-label="Go to home page" className="text-[#DDD] text-[35px] hover:border-b-[4px]  hover:transition-[2s]">
 								خانه
 							</Link>
 						</li>
@@ -42,15 +42,15 @@ const NavBar = () => {
 							<Link
 								href="/about"
 								aria-label="Go to about page"
-								className="text-[#DDD] text-[30px] hover:border-b-[4px] hover:transition-[2s]">
+								className="text-[#DDD] text-[35px] hover:border-b-[4px] hover:transition-[2s]">
 								درباره‌ی من
 							</Link>
 						</li>
 					</ul>
 
-					<div className="justify-end md:ml-auto hidden md:flex">
+					<div className="justify-end hidden md:ml-auto md:flex">
 						<Link href="/contact" aria-label="Go to contact page">
-							<button className="text-[#000] font-bold text-[22px] px-4 py-2 bg-[#eaeaea] rounded hover:bg-[#ccc]">تماس با من</button>
+							<button className="text-[#000] font-bold text-[24px] px-4 py-2 bg-[#eaeaea] rounded hover:bg-[#ccc]">تماس با من</button>
 						</Link>
 					</div>
 
@@ -63,7 +63,7 @@ const NavBar = () => {
 						{isOpen ? (
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
-								className="h-6 w-6"
+								className="w-6 h-6"
 								fill="none"
 								viewBox="0 0 24 24"
 								stroke="currentColor"
@@ -83,10 +83,10 @@ const NavBar = () => {
 				className={`fixed top-0 right-0 h-full w-64 bg-[#1A1A2E] shadow-lg transform transition-transform duration-300 z-[50] ${
 					isOpen ? 'translate-x-0' : 'translate-x-full'
 				} md:hidden`}>
-				<div className="flex justify-between items-center p-4 border-b border-gray-700">
+				<div className="flex items-center justify-between p-4 border-b border-gray-700">
 					<span className="text-2xl text-[#EAEAEA] font-bold">منو</span>
 				</div>
-				<ul className="font-medium flex flex-col p-4 space-y-4">
+				<ul className="flex flex-col p-4 space-y-4 font-medium">
 					<li>
 						<Link href="/" onClick={() => setIsOpen(false)} aria-label="Go to home page" className="block py-2 px-3 text-[#DDDD] rounded">
 							خانه
