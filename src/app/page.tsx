@@ -1,13 +1,20 @@
 import HomePage from '../Components/Home/HomePage';
 
+// Define the props type for the generateMetadata function
+interface GenerateMetadataParams {
+	params: Record<string, string | undefined>;
+}
+
 export default function Home() {
-	return ( 
+	return (
 		<>
 			<HomePage />
 		</>
 	);
 }
-export function generateMetadata({ params }) {
+
+// Define the return type for generateMetadata
+export function generateMetadata({ params }: GenerateMetadataParams) {
 	return {
 		title: 'سارو - فرانت‌اند',
 		description: 'برنامه‌نویس فرانت‌اند.',

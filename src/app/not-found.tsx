@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-const NotFound = () => {
+const NotFound: React.FC = () => {
 	return (
 		<>
 			<Head>

@@ -4,7 +4,11 @@ import NavBar from '@/Components/NavBar/NavBar';
 import { metadata } from '@/metadata';
 import Head from 'next/head';
 
-export default function RootLayout({ children }) {
+interface RootLayoutProps {
+	children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<html lang="fa" dir="rtl">
 			<Head>

@@ -5,8 +5,8 @@ import LogoSite from '/public/logo.png';
 import { useState, useEffect } from 'react';
 
 const NavBar = () => {
-	const [isOpen, setIsOpen] = useState(false);
-	const [isScrolled, setIsScrolled] = useState(false);
+	const [isOpen, setIsOpen] = useState<boolean>(false);
+	const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
 	useEffect(() => {
 		const handleScroll = () => {

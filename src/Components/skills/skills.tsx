@@ -1,7 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 
+interface Skill {
+	value: number;
+	text: string;
+}
+
 const MySkills = () => {
-	const skills = [
+	const skills: Skill[] = [
 		{ value: 20, text: 'PHP' },
 		{ value: 30, text: 'C#' },
 		{ value: 89, text: 'Sass & Scss' },
@@ -19,9 +24,9 @@ const MySkills = () => {
 		{ value: 95, text: 'HTML' },
 	];
 
-	const sectionRef = useRef(null);
-	const [animated, setAnimated] = useState(false);
-	const [isClient, setIsClient] = useState(false);
+	const sectionRef = useRef<HTMLDivElement | null>(null); // تعیین نوع ریفرنس
+	const [animated, setAnimated] = useState<boolean>(false);
+	const [isClient, setIsClient] = useState<boolean>(false);
 
 	// بررسی رندر در کلاینت
 	useEffect(() => {
@@ -31,7 +36,7 @@ const MySkills = () => {
 	useEffect(() => {
 		if (!isClient) return;
 
-		const handleScroll = entries => {
+		const handleScroll = (entries: IntersectionObserverEntry[]) => {
 			entries.forEach(entry => {
 				if (entry.isIntersecting) {
 					setAnimated(true);

@@ -1,28 +1,37 @@
 'use client';
 import { TfiEmail } from 'react-icons/tfi';
 import { CiLocationOn, CiMobile3 } from 'react-icons/ci';
-import { useRef } from 'react';
+import { useRef, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
 
+interface ContactItem {
+	icon: React.ElementType;
+	label: string;
+	description: string;
+	id: string;
+}
+
 const ContactMe = () => {
-	const items = [
+	const items: ContactItem[] = [
 		{ icon: CiLocationOn, label: 'موقعیت من:', description: 'Karaj, Iran', id: '500' },
 		{ icon: TfiEmail, label: 'ایمیل من:', description: 'Sarojafari2004@gmail.com', id: '501' },
 		{ icon: CiMobile3, label: 'تماس من:', description: '09019909546', id: '502' },
 	];
 
-	const form = useRef();
+	const form = useRef<HTMLFormElement>(null);
 
-	const sendEmail = async e => {
+	const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
 		try {
-			await emailjs.sendForm('service_andd1ga', 'template_qksicnb', form.current, {
-				publicKey: '8QPW9A0NjT8p8-8h5',
-			});
-			toast.success('با موفقیت ارسال شد');
-			form.current.reset();
+			if (form.current) {
+				await emailjs.sendForm('service_andd1ga', 'template_qksicnb', form.current, {
+					publicKey: '8QPW9A0NjT8p8-8h5',
+				});
+				toast.success('با موفقیت ارسال شد');
+				form.current.reset();
+			}
 		} catch (error) {
 			toast.error('مشکلی در ارسال پیش آمده است ');
 		}
@@ -42,15 +51,15 @@ const ContactMe = () => {
 									aria-label={item.label}
 								/>
 								<section>
-									<span className="font-bold text-[22px] text-white  block mb-1">{item.label}</span>
-									<p className="text-white font-sans  text-[18px]">{item.description}</p>
+									<span className="font-bold text-[22px] text-white block mb-1">{item.label}</span>
+									<p className="text-white font-sans text-[18px]">{item.description}</p>
 								</section>
 							</section>
 						))}
 					</section>
 
 					<section className="w-full lg:w-1/2">
-						<form className="grid grid-cols-1 md:grid-cols-2 gap-6 text-[20px] font-bold " ref={form} onSubmit={sendEmail}>
+						<form className="grid grid-cols-1 md:grid-cols-2 gap-6 text-[20px] font-bold" ref={form} onSubmit={sendEmail}>
 							<input
 								type="text"
 								name="user_name"
@@ -78,7 +87,7 @@ const ContactMe = () => {
 							/>
 							<textarea
 								name="message"
-								rows="5"
+								rows={5}
 								placeholder="پیام شما"
 								required
 								className="col-span-1 md:col-span-2 p-3 rounded-lg border border-gray-300 focus:ring focus:ring-[#8750F7] focus:outline-none text-black"
@@ -98,6 +107,5 @@ const ContactMe = () => {
 		</>
 	);
 };
-
 
 export default ContactMe;
